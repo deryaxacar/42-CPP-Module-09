@@ -13,6 +13,7 @@
     - [Kapsayıcı Kullanımı](#kapsayici-kullanimi)
     - [Map Nedir?](#map-nedir)
     - [Hata Yönetimi](#hata-yonetimi)
+    - [`std::istringstream` Nedir?](std::istringstream-nedir)
   - [Ex01 - Reverse Polish Notation](#ex02)
     - [Kapsayıcı Kullanımı](#ex01-kapsayici-kullanimi)
     - [Stack Nedir?](#stack-nedir)
@@ -46,6 +47,64 @@ Tüm anahtarlar benzersizdir ve otomatik olarak küçükten büyüğe sıralanı
 std::map<std::string, float> bitcoinRates;
 bitcoinRates["2011-01-03"] = 0.3f;
 ```
+
+---
+
+## <a name="std::istringstream-nedir"></a> `std::istringstream` Nedir?
+
+`std::istringstream`, C++ Standard Library'nin bir bileşeni olup, bir **giriş akışını** (input stream) simüle etmek için kullanılan bir sınıftır. Bu sınıf, bir `std::string` nesnesinden veri okumak için kullanılır. `std::istringstream` sınıfı, `std::istream` sınıfından türemektedir ve string üzerinde okuma işlemi yapmak için özel olarak tasarlanmıştır.
+
+## Temel Kullanım
+
+`std::istringstream`, `std::string`'ten veri okuma işlemlerini daha esnek ve kolay hale getirir. Bir metin dizesi (`std::string`) üzerinde tıpkı bir dosya veya `std::cin` gibi okuma işlemleri yapabilmenizi sağlar.
+
+İlk olarak, `std::istringstream`'i kullanabilmek için `#include <sstream>` başlık dosyasını dahil etmeniz gerekir.
+
+```cpp
+#include <iostream>
+#include <sstream>
+#include <string>
+
+int main() {
+    // Okunacak veri
+    std::string data = "42 3.14 hello";
+
+    // istringstream akışı oluşturuluyor
+    std::istringstream stream(data);
+
+    int intValue;
+    double doubleValue;
+    std::string stringValue;
+
+    // Verileri string'den ayırarak okuyup uygun türlerdeki değişkenlere atıyoruz
+    stream >> intValue >> doubleValue >> stringValue;
+
+    // Sonuçları ekrana yazdırıyoruz
+    std::cout << "Integer: " << intValue << std::endl;
+    std::cout << "Double: " << doubleValue << std::endl;
+    std::cout << "String: " << stringValue << std::endl;
+
+    return 0;
+}
+```
+
+---
+
+çıktı:
+
+```bash
+Integer: 42
+Double: 3.14
+String: hello
+```
+
+**Özellikler ve Avantajlar**
+
+- Veri okuma: Bir metin dizesindeki veriyi okuma işlemini kolaylaştırır. Dosya okuma yerine, bir string'den veri çıkartabilirsiniz.
+
+- Dönüşüm ve ayrıştırma: String içerisindeki veriyi otomatik olarak uygun türlere dönüştürür (örneğin, sayılar, metin vb.).
+
+---
 
 ### <a name="hata-yonetimi"></a>Hata Yönetimi
 - Geçersiz tarih formatı
