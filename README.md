@@ -13,7 +13,7 @@
     - [Kapsayıcı Kullanımı](#kapsayici-kullanimi)
     - [Map Nedir?](#map-nedir)
     - [Hata Yönetimi](#hata-yonetimi)
-    - [`std::istringstream` Nedir?](std::istringstream-nedir)
+    - [std::istringstream Nedir?](std::istringstream-nedir)
   - [Ex01 - Reverse Polish Notation](#ex02)
     - [Kapsayıcı Kullanımı](#ex01-kapsayici-kullanimi)
     - [Stack Nedir?](#stack-nedir)
