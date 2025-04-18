@@ -13,7 +13,7 @@
     - [Kapsayıcı Kullanımı](#kapsayici-kullanimi)
     - [Map Nedir?](#map-nedir)
     - [Hata Yönetimi](#hata-yonetimi)
-    - [std::istringstream Nedir?](#std::istringstream-nedir)
+    - [std::istringstream Nedir?](#istringstream-nedir)
   - [Ex01 - Reverse Polish Notation](#ex02)
     - [Kapsayıcı Kullanımı](#ex01-kapsayici-kullanimi)
     - [Stack Nedir?](#stack-nedir)
@@ -50,7 +50,7 @@ bitcoinRates["2011-01-03"] = 0.3f;
 
 ---
 
-## <a name="std::istringstream-nedir"></a> `std::istringstream` Nedir?
+## <a name="istringstream-nedir"></a> std::istringstream Nedir?
 
 `std::istringstream`, C++ Standard Library'nin bir bileşeni olup, bir **giriş akışını** (input stream) simüle etmek için kullanılan bir sınıftır. Bu sınıf, bir `std::string` nesnesinden veri okumak için kullanılır. `std::istringstream` sınıfı, `std::istream` sınıfından türemektedir ve string üzerinde okuma işlemi yapmak için özel olarak tasarlanmıştır.
 
