@@ -47,17 +47,14 @@ bool BitcoinExchange::isValidDate(const string &date)
     return true;
 }
 
-int BitcoinExchange::isValidValue(const std::string &value)
-{
+int BitcoinExchange::isValidValue(const string &value) {
+    std::istringstream iss(value);
     double num;
-    if (!(std::istringstream(value) >> num))
+    if (!(iss >> num))
         return -1;
-    if (num < 0)
-        return 0;
-    if (num > 1000)
-        return 1;
-    return 2;
+    return (num < 0) ? 0 : (num > 1000) ? 1 : 2;
 }
+
 bool BitcoinExchange::loadDatabase(const string &filename)
 {
     std::ifstream file(filename.c_str());
